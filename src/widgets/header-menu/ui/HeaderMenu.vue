@@ -1,5 +1,6 @@
 <template>
     <div class="header-menu">
+        This is Header Menu:
         <a
             class="header-menu__menu-item"
             v-for="item in props.items"
@@ -11,9 +12,14 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import type { MenuItem } from '../types';
 
-const props = defineProps(["items"]);
+interface HeaderMenuProps {
+    items: Array<MenuItem>
+}
+
+const props = defineProps<HeaderMenuProps>();
 
 </script>
 
